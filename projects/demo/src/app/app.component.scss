@@ -16,6 +16,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+
   > div {
     display: flex;
     gap: 24px;
@@ -46,19 +47,34 @@
 //
 // CUSTOM TIMELINE
 //
+:root {
+  --item-timeline-line-thickness: 3px !important;
+  --item-timeline-arrow-width: 8px !important;
+  --item-timeline-arrow-height: 16px !important;
+  --item-timeline-line-color: silver !important;
+}
+
 .custom-timeline {
-  ::ng-deep .ngx-mat-timeline-item-line {
-    background-color: silver;
-  }
   ::ng-deep .ngx-mat-timeline-item-content {
     position: relative;
+  }
+
+  ::ng-deep .ngx-mat-timeline-item-line {
+    --item-timeline-line-thickness: 3px;
+    --item-timeline-arrow-width: 8px;
+    --item-timeline-arrow-height: 16px;
+    --item-timeline-line-color: silver;
+  }
+
+  ::ng-deep .ngx-mat-timeline-item-line-arrow {
+    --item-timeline-line-thickness: 3px;
+    --item-timeline-arrow-width: 8px;
+    --item-timeline-arrow-height: 16px;
+    --item-timeline-line-color: silver;
   }
 }
 
 .custom-timeline.ngx-mat-timeline-vertical .ngx-mat-timeline-item {
-  ::ng-deep .ngx-mat-timeline-item-line {
-    width: 3px;
-  }
   ::ng-deep .ngx-mat-timeline-item-content {
     // connection line from content box
     &:before {
@@ -88,18 +104,21 @@
         float: right;
         margin: 0 0 0 10px;
       }
+
       &:before {
         left: initial;
         right: -24px;
       }
     }
   }
+
   &:nth-child(2n+1) {
     ::ng-deep .ngx-mat-timeline-item-content {
       img {
         float: left;
         margin: 0 10px 0 0;
       }
+
       &:before {
         left: -24px;
       }
@@ -114,17 +133,20 @@
         float: left;
         margin: 0 10px 0 0;
       }
+
       &:before {
         left: -24px;
       }
     }
   }
+
   &:nth-child(2n+1) {
     ::ng-deep .ngx-mat-timeline-item-content {
       img {
         float: right;
         margin: 0 0 0 10px;
       }
+
       &:before {
         left: initial;
         right: -24px;
@@ -139,6 +161,7 @@
       float: right;
       margin: 0 0 0 10px;
     }
+
     &:before {
       right: -24px;
     }
@@ -147,16 +170,16 @@
 
 .custom-timeline.ngx-mat-timeline-horizontal {
   padding: 40px 0;
+
   .ngx-mat-timeline-item {
-    ::ng-deep .ngx-mat-timeline-item-line {
-      height: 3px;
-    }
     ::ng-deep .ngx-mat-timeline-item-timeline {
       max-height: 32px !important;
       min-height: 32px !important;
     }
+
     ::ng-deep .ngx-mat-timeline-item-content {
       position: relative;
+
       &:before {
         content: " ";
         display: block;
@@ -186,6 +209,7 @@
       }
     }
   }
+
   &:nth-child(2n+1) {
     ::ng-deep .ngx-mat-timeline-item-content {
       &:before {
@@ -204,6 +228,7 @@
       }
     }
   }
+
   &:nth-child(2n) {
     ::ng-deep .ngx-mat-timeline-item-content {
       &:before {
@@ -226,6 +251,7 @@
   border: solid 3px silver;
   border-radius: 4px;
   box-sizing: border-box;
+
   img {
     width: 82px;
     vertical-align: top;
